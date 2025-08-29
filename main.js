@@ -4,7 +4,7 @@ const fs = require('fs');   // to write the results to results.json
 
 const API_KEY = process.env.YOUTUBE_API;
 const CHANNEL_ID = process.env.CHANNEL_ID;
-const MIN_VIEWS = 300000;
+const MIN_VIEWS = parseInt(process.env.MINIMUM_VIEWS);
 
 async function fetchChannelVideos(pageToken = "") {
   const searchUrl = new URL("https://www.googleapis.com/youtube/v3/search");
